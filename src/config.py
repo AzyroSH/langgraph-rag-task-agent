@@ -7,7 +7,7 @@ class BasicConfig():
         # Path configuration
         self.PROJECT_PATH = os.path.dirname(os.path.dirname(__file__))
         self.CHROMADB_PATH = os.path.join(self.PROJECT_PATH, "chromadb_db")
-        self.KNOWLEDGE_PATH = os.path.join(self.PROJECT_PATH, "knowledge")
+        self.KNOWLEDGE_PATH = os.path.join(self.PROJECT_PATH, "knowledge_base")
 
         # Model configuration
         self.MODEL_NAME = "qwen2.5:3b"
