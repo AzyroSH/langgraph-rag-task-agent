@@ -184,6 +184,10 @@ class KnowledgeManager():
         self.incremental_update_data_to_knowledge_base(chunks=chunks)
         print("Knowledge base is ready")
 
+if __name__ == "__main__":
+    kb_manager = KnowledgeManager()
+    kb_manager.main()
+
 
 
 
