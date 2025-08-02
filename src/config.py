@@ -14,3 +14,7 @@ class BasicConfig():
         self.MODEL = ChatOllama(model=self.MODEL_NAME, temperature=0.3)
         self.EMBEDDING_MODEL_NAME = "quentinz/bge-large-zh-v1.5"
         self.EMBEDDING_MODEL = OllamaEmbeddings(model=self.EMBEDDING_MODEL_NAME)
+
+        # Other configuration
+        self.CHUNK_SIZE = 1000
+        self.CHUNK_OVERLAP = 200
