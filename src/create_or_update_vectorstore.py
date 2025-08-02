@@ -80,7 +80,7 @@ class KnowledgeManager():
     
     def load_data(self):
         """load the data from the KNOWLEDGE_PATH"""
-        documents = []
+        documents: list[Document] = []
 
         print("loading the markdown files")
         md_loader = DirectoryLoader(
@@ -177,6 +177,9 @@ class KnowledgeManager():
     def main(self, chunk_size: int, chunk_overlap: int):
         """main fuction"""
         documents = self.load_data()
+        if not documents:
+            print("No documents loaded, exiting...")
+            return
         chunks = self.processing_data(
             documents=documents, 
             chunk_size=chunk_size,
@@ -186,7 +189,8 @@ class KnowledgeManager():
 
 if __name__ == "__main__":
     kb_manager = KnowledgeManager()
-    kb_manager.main()
+    kb_manager.main(chunk_size=config.CHUNK_SIZE,
+                    chunk_overlap=config.CHUNK_OVERLAP)
 
 
 
